@@ -2,6 +2,7 @@ import { Request, Response, Router } from "express";
 import authRouter from "./api/auth/router";
 import profileRouter from "./api/profile/router";
 import funRouter from "./api/fun/router";
+import serviceRouter from "./api/services/routes";
 // Routes
 const router = Router();
 const routers = Router();
@@ -11,8 +12,8 @@ router.use("/profile", profileRouter);
 router.use("/verify_token", profileRouter);
 
 router.use("/fun", funRouter);
+router.use("/", serviceRouter);
 //
-
 routers.use("/api/v1", router);
 // Router not found
 routers.all("*", (req: Request, res: Response) => {

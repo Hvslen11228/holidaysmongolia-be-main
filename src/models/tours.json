@@ -1,0 +1,27 @@
+[
+  {
+    "authorId": "62f498084813210f1dba09c3",
+    "date": "May 20, 2021",
+    "href": "/listing-experiences-detail",
+    "listingCategoryId": "62f498084813210f1dba09c3",
+    "title": "generate interactive markets",
+    "featuredImage": "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1435866-media_library/original/38d6b5ea-abcc-4876-acb4-e5b79586c37c.jpeg?im_w=1200",
+    "galleryImgs": [
+      "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1435866-media_library/original/38d6b5ea-abcc-4876-acb4-e5b79586c37c.jpeg?im_w=1200",
+      "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1435866-media_library/original/38d6b5ea-abcc-4876-acb4-e5b79586c37c.jpeg?im_w=1200",
+      "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1435866-media_library/original/38d6b5ea-abcc-4876-acb4-e5b79586c37c.jpeg?im_w=1200",
+      "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1435866-media_library/original/38d6b5ea-abcc-4876-acb4-e5b79586c37c.jpeg?im_w=1200"
+    ],
+    "commentCount": 64,
+    "viewCount": 369,
+    "like": true,
+    "address": "2 Warner Alley",
+    "reviewStart": 4.4,
+    "reviewCount": 478,
+    "price": "$200",
+    "maxGuests": 6,
+    "saleOff": "-20% today",
+    "isAds": true,
+    "map": { "lat": 55.2094559, "lng": 61.5594641 }
+  }
+]

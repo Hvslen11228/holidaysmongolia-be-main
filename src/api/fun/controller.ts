@@ -317,3 +317,10 @@ export const menu = async (req: any, res: Response) => {
     data: { first_language: menu, second_language: menu },
   });
 };
+export const location = async (req: any, res: Response) => {
+  return res.status(200).json({
+    success: true,
+    message: "Амжилттай",
+    data: ["ssad", "asdsad"],
+  });
+};

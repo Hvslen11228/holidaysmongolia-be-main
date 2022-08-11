@@ -1,26 +1,30 @@
 import mongoose from "mongoose";
+import { Types } from "mongoose";
 
-export interface usersDoc extends mongoose.Document {
-  user_email: string;
-  password: string;
-  user_id: number;
-}
-
-const userSchema = new mongoose.Schema<usersDoc>(
+const userSchema = new mongoose.Schema<any>(
   {
-    user_email: {
-      type: String,
-      unique: true,
-    },
-    password: {
-      type: String,
-      required: [true, "Нууц үгээ оруулна уу."],
-      trim: true,
-    },
-    user_id: Number,
+    authorId: Types.ObjectId,
+    date: String,
+    href: String,
+    listingCategoryId: Types.ObjectId,
+    title: String,
+    featuredImage: String,
+    galleryImgs: Array,
+    commentCount: Number,
+    viewCount: Number,
+    like: Boolean,
+    address: String,
+    reviewStart: Number,
+    reviewCount: Number,
+    price: String,
+    maxGuests: Number,
+    saleOff: String,
+    isAds: Boolean,
+    map: Object,
+    about: String,
   },
   { timestamps: true }
 );
 
-const users = mongoose.model<usersDoc>("users", userSchema);
+const users = mongoose.model<any>("tours", userSchema);
 export default users;

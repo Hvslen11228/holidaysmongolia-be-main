@@ -1,8 +1,9 @@
 import { Router } from "express";
 const router = Router();
-import { getall, create, remove, update } from "./controller";
-import { checkToken, authorize } from "../../auth/token_validation";
-router.get("/", checkToken, getall);
+import { getall, one, create, remove, update } from "./controller";
+import { checkToken, authorize } from "../../../auth/token_validation";
+router.get("/", getall);
+router.get("/:id", one);
 router.post("/", checkToken, create);
 router.delete("/:id", checkToken, remove);
 router.put("/:id", checkToken, update);
