@@ -1,6 +1,5 @@
-# NPM INSTALL
+# 
 
-npm install
-npm run dev
+## npm install
 
-# NPM RUN DEV
+## npm run watch

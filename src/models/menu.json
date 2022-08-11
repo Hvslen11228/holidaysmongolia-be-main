@@ -1,0 +1,427 @@
+[
+  {
+    "id": "nc_1660104997461_3971554422",
+    "href": "/",
+    "name": "Home",
+    "type": "dropdown",
+    "children": [
+      {
+        "id": "nc_1660104997461_3016766009",
+        "href": "/",
+        "name": "Online Booking"
+      },
+      {
+        "id": "nc_1660104997461_4339632310",
+        "href": "/home-2",
+        "name": "Real Estate",
+        "isNew": true
+      },
+      {
+        "id": "nc_1660104997461_908491859",
+        "href": "/home-3",
+        "name": "Home - 3",
+        "isNew": true
+      }
+    ],
+    "isNew": true
+  },
+  {
+    "id": "nc_1660104997461_6849027338",
+    "href": "#",
+    "name": "Five columns",
+    "type": "megaMenu",
+    "megaMenu": [
+      {
+        "id": "nc_1660104997461_4480271283",
+        "image": "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "title": "Company",
+        "items": [
+          { "id": "nc_1660104997461_9586828176", "href": "#", "name": "Katz" },
+          {
+            "id": "nc_1660104997461_7946507095",
+            "href": "#",
+            "name": "Livefish"
+          },
+          {
+            "id": "nc_1660104997461_444205055",
+            "href": "#",
+            "name": "Digitube"
+          },
+          { "id": "nc_1660104997461_4594840656", "href": "#", "name": "Midel" },
+          {
+            "id": "nc_1660104997461_6496863181",
+            "href": "#",
+            "name": "Rhyloo"
+          },
+          {
+            "id": "nc_1660104997461_4075781980",
+            "href": "#",
+            "name": "Innojam"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_6676266662",
+        "image": "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "title": "App Name",
+        "items": [
+          {
+            "id": "nc_1660104997461_2038781598",
+            "href": "#",
+            "name": "Tresom"
+          },
+          {
+            "id": "nc_1660104997461_6680403005",
+            "href": "#",
+            "name": "Hatity"
+          },
+          { "id": "nc_1660104997461_8141047131", "href": "#", "name": "Otcom" },
+          {
+            "id": "nc_1660104997461_8259259051",
+            "href": "#",
+            "name": "Daltfresh"
+          },
+          {
+            "id": "nc_1660104997461_3009815579",
+            "href": "#",
+            "name": "Duobam"
+          },
+          {
+            "id": "nc_1660104997461_2623442249",
+            "href": "#",
+            "name": "Mat Lam Tam"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_5452702667",
+        "image": "https://images.pexels.com/photos/5059013/pexels-photo-5059013.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "title": "City",
+        "items": [
+          {
+            "id": "nc_1660104997461_2718063057",
+            "href": "#",
+            "name": "Nezamyslice"
+          },
+          {
+            "id": "nc_1660104997461_5770618159",
+            "href": "#",
+            "name": "Herzliyya"
+          },
+          {
+            "id": "nc_1660104997461_7873441127",
+            "href": "#",
+            "name": "Hongqi"
+          },
+          {
+            "id": "nc_1660104997461_7483731384",
+            "href": "#",
+            "name": "Kamakura"
+          },
+          {
+            "id": "nc_1660104997461_7333011391",
+            "href": "#",
+            "name": "Yahil’nytsya"
+          },
+          {
+            "id": "nc_1660104997461_3056573020",
+            "href": "#",
+            "name": "Mandalay"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_8158374005",
+        "image": "https://images.pexels.com/photos/5159141/pexels-photo-5159141.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "title": "Contruction",
+        "items": [
+          {
+            "id": "nc_1660104997461_3751512760",
+            "href": "#",
+            "name": "Plexiglass"
+          },
+          {
+            "id": "nc_1660104997461_9098095111",
+            "href": "#",
+            "name": "Plexiglass"
+          },
+          { "id": "nc_1660104997461_857599512", "href": "#", "name": "Stone" },
+          {
+            "id": "nc_1660104997461_2249541005",
+            "href": "#",
+            "name": "Granite"
+          },
+          { "id": "nc_1660104997461_8081537346", "href": "#", "name": "Glass" },
+          {
+            "id": "nc_1660104997461_7524351141",
+            "href": "#",
+            "name": "Plexiglass"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_8696101683",
+        "image": "https://images.pexels.com/photos/7473041/pexels-photo-7473041.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "title": "Country",
+        "items": [
+          {
+            "id": "nc_1660104997461_2982571508",
+            "href": "#",
+            "name": "Czech Republic"
+          },
+          {
+            "id": "nc_1660104997461_7652303357",
+            "href": "#",
+            "name": "Israel"
+          },
+          { "id": "nc_1660104997461_1023443441", "href": "#", "name": "China" },
+          { "id": "nc_1660104997461_1196553443", "href": "#", "name": "Japan" },
+          {
+            "id": "nc_1660104997461_7422684107",
+            "href": "#",
+            "name": "Ukraine"
+          },
+          {
+            "id": "nc_1660104997461_2993841077",
+            "href": "#",
+            "name": "Myanmar"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nc_1660104997461_153115732",
+    "href": "#",
+    "name": "Listing Page",
+    "type": "dropdown",
+    "isNew": true,
+    "children": [
+      {
+        "id": "nc_1660104997461_1868551389",
+        "href": "/listing-stay",
+        "name": "Stay listing",
+        "type": "dropdown",
+        "children": [
+          {
+            "id": "nc_1660104997461_8921431043",
+            "href": "/listing-stay",
+            "name": "Stay page"
+          },
+          {
+            "id": "nc_1660104997461_2972738182",
+            "href": "/listing-stay-map",
+            "name": "Stay page (map)"
+          },
+          {
+            "id": "nc_1660104997461_4740986605",
+            "href": "/listing-stay-detail",
+            "name": "Stay Detail"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_8147107240",
+        "href": "/listing-experiences",
+        "name": "Experiences listing",
+        "type": "dropdown",
+        "children": [
+          {
+            "id": "nc_1660104997461_8400508754",
+            "href": "/listing-experiences",
+            "name": "Experiences page"
+          },
+          {
+            "id": "nc_1660104997461_1660927743",
+            "href": "/listing-experiences-map",
+            "name": "Experiences page (map)"
+          },
+          {
+            "id": "nc_1660104997461_4081654054",
+            "href": "/listing-experiences-detail",
+            "name": "Experiences Detail"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_1379627443",
+        "href": "/listing-car",
+        "name": "Cars listing",
+        "type": "dropdown",
+        "children": [
+          {
+            "id": "nc_1660104997461_970575008",
+            "href": "/listing-car",
+            "name": "Cars page"
+          },
+          {
+            "id": "nc_1660104997461_171375572",
+            "href": "/listing-car-map",
+            "name": "Cars page (map)"
+          },
+          {
+            "id": "nc_1660104997461_2789415548",
+            "href": "/listing-car-detail",
+            "name": "Car Detail"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_9900029591",
+        "href": "/listing-real-estate",
+        "name": "Real Estate Listings",
+        "isNew": true,
+        "type": "dropdown",
+        "children": [
+          {
+            "id": "nc_1660104997461_6025678069",
+            "href": "/listing-real-estate",
+            "name": "Real Estate Listings",
+            "isNew": true
+          },
+          {
+            "id": "nc_1660104997461_192245709",
+            "href": "/listing-real-estate-map",
+            "name": "Real Estate Maps",
+            "isNew": true
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_266302341",
+        "href": "/listing-flights",
+        "name": "Flights listing",
+        "isNew": true
+      }
+    ]
+  },
+  {
+    "id": "nc_1660104997461_5184986025",
+    "href": "#",
+    "name": "Templates",
+    "type": "dropdown",
+    "children": [
+      {
+        "id": "nc_1660104997461_9490621811",
+        "href": "/add-listing-1",
+        "name": "Add Listings",
+        "type": "dropdown",
+        "children": [
+          {
+            "id": "nc_1660104997461_5487425732",
+            "href": "/add-listing-1",
+            "name": "Add Listings 1"
+          },
+          {
+            "id": "nc_1660104997461_6151430475",
+            "href": "/add-listing-2",
+            "name": "Add Listings 2"
+          },
+          {
+            "id": "nc_1660104997461_4966635024",
+            "href": "/add-listing-3",
+            "name": "Add Listings 3"
+          },
+          {
+            "id": "nc_1660104997461_9449019522",
+            "href": "/add-listing-4",
+            "name": "Add Listings 4"
+          },
+          {
+            "id": "nc_1660104997461_7204441086",
+            "href": "/add-listing-5",
+            "name": "Add Listings 5"
+          },
+          {
+            "id": "nc_1660104997461_7231255697",
+            "href": "/add-listing-6",
+            "name": "Add Listings 6"
+          },
+          {
+            "id": "nc_1660104997461_5526798423",
+            "href": "/add-listing-7",
+            "name": "Add Listings 7"
+          },
+          {
+            "id": "nc_1660104997461_3428812490",
+            "href": "/add-listing-8",
+            "name": "Add Listings 8"
+          },
+          {
+            "id": "nc_1660104997461_4343735824",
+            "href": "/add-listing-9",
+            "name": "Add Listings 9"
+          },
+          {
+            "id": "nc_1660104997461_1998049075",
+            "href": "/add-listing-10",
+            "name": "Add Listings 10"
+          }
+        ]
+      },
+      {
+        "id": "nc_1660104997461_366169611",
+        "href": "/checkout",
+        "name": "Checkout"
+      },
+      {
+        "id": "nc_1660104997461_1413041494",
+        "href": "/pay-done",
+        "name": "Pay done"
+      },
+      {
+        "id": "nc_1660104997461_9929522066",
+        "href": "/author",
+        "name": "Author Page"
+      },
+      {
+        "id": "nc_1660104997461_672745458",
+        "href": "/account",
+        "name": "Account Page"
+      }
+    ]
+  },
+  {
+    "id": "nc_1660104997461_9269991437",
+    "href": "#",
+    "name": "Other pages",
+    "type": "dropdown",
+    "children": [
+      {
+        "id": "nc_1660104997461_6180143236",
+        "href": "/blog",
+        "name": "Blog Page"
+      },
+      {
+        "id": "nc_1660104997461_4174334870",
+        "href": "/blog-single",
+        "name": "Blog Single"
+      },
+      {
+        "id": "nc_1660104997461_1293353838",
+        "href": "/about",
+        "name": "About"
+      },
+      {
+        "id": "nc_1660104997461_4725526809",
+        "href": "/contact",
+        "name": "Contact us"
+      },
+      {
+        "id": "nc_1660104997461_6168964821",
+        "href": "/login",
+        "name": "Login"
+      },
+      {
+        "id": "nc_1660104997461_2516009385",
+        "href": "/signup",
+        "name": "Signup"
+      },
+      {
+        "id": "nc_1660104997461_1627023164",
+        "href": "/subscription",
+        "name": "Subscription"
+      }
+    ]
+  }
+]
