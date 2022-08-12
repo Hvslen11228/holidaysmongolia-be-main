@@ -1,4 +1,4 @@
-import category_model from "../../../models/category";
+import complex_category_model from "../../../models/complex_cat";
 import { Types } from "mongoose";
 const { ObjectId } = Types;
 const where = [
@@ -32,8 +32,8 @@ const where = [
 ];
 export const service_find_where = async (body: any, sort: any) => {
   try {
-    const res_find = await category_model.aggregate([...where]);
-    // const res = await category_model.find(body).sort(sort);
+    const res_find = await complex_category_model.aggregate([...where]);
+    // const res = await complex_category_model.find(body).sort(sort);
     return Promise.resolve(res_find);
   } catch (err) {
     console.log(err);
@@ -42,7 +42,7 @@ export const service_find_where = async (body: any, sort: any) => {
 };
 export const service_find = async (body: any, sort: any) => {
   try {
-    const res = await category_model.find(body).sort(sort);
+    const res = await complex_category_model.find(body).sort(sort);
     return Promise.resolve(res);
   } catch (err) {
     console.log(err);
@@ -51,7 +51,7 @@ export const service_find = async (body: any, sort: any) => {
 };
 export const service_find_one = async (body: any) => {
   try {
-    const res = await category_model.findOne(body);
+    const res = await complex_category_model.findOne(body);
     return Promise.resolve(res);
   } catch (err) {
     console.log(err);
@@ -60,7 +60,7 @@ export const service_find_one = async (body: any) => {
 };
 export const service_create = async (body: any) => {
   try {
-    const res = await category_model.create(body);
+    const res = await complex_category_model.create(body);
     return Promise.resolve(res);
   } catch (err) {
     console.log(err);
@@ -69,7 +69,7 @@ export const service_create = async (body: any) => {
 };
 export const service_update = async (_id: any, body: any) => {
   try {
-    const res_find = await category_model.updateOne(
+    const res_find = await complex_category_model.updateOne(
       { _id },
       { $set: { ...body } }
     );
@@ -81,7 +81,7 @@ export const service_update = async (_id: any, body: any) => {
 };
 export const service_remove = async (id: any) => {
   try {
-    const res_find = await category_model.findOneAndDelete(id);
+    const res_find = await complex_category_model.findOneAndDelete(id);
     return Promise.resolve(res_find);
   } catch (err) {
     console.log(err);

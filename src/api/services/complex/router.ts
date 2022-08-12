@@ -1,0 +1,11 @@
+import { Router } from "express";
+const router = Router();
+import { getall, one, create, remove, update, group } from "./controller";
+import { checkToken, authorize } from "../../../auth/token_validation";
+router.get("/", getall);
+router.get("/:id", one);
+router.get("/category/:id/", group);
+router.post("/", checkToken, create);
+router.delete("/:id", checkToken, remove);
+router.put("/:id", checkToken, update);
+export default router;
