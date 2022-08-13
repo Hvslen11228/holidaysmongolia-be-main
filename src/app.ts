@@ -29,7 +29,7 @@ app.use(
   lusca.xframe("SAMEORIGIN"),
   lusca.xssProtection(true),
   cors({
-    origin: cors_urls,
+    origin: "*",
     allowedHeaders: "Set-Cookie, Content-Type, Authorization",
     methods: "GET, POST, PUT, DELETE",
     credentials: true,
