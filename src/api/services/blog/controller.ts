@@ -112,7 +112,7 @@ export const update = async (req: any, res: Response) => {
   const { body } = req;
   const { id } = req.params;
   try {
-    const results = await service_update(id, { auto_pay: body.auto_pay });
+    const results = await service_update(id, { ...body });
     return res.status(200).json({
       success: true,
       message: "Амжилттай",

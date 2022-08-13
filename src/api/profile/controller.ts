@@ -5,10 +5,17 @@ export const getone = async (req: any, res: Response) => {
   const id = req._id;
   try {
     const results = await one(id, {});
+    if (results) {
+      return res.status(200).json({
+        success: true,
+        message: "Амжилттай",
+        data: results,
+      });
+    }
     return res.status(200).json({
       success: true,
       message: "Амжилттай",
-      data: results,
+      data: req.decoded.result,
     });
   } catch (error) {
     return res.status(200).json({

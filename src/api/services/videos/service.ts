@@ -42,7 +42,7 @@ export const service_update = async (_id: any, body: any) => {
 };
 export const service_remove = async (id: any) => {
   try {
-    const res_find = await videos_model.findOneAndDelete(id);
+    const res_find = await videos_model.findOneAndDelete({ _id: id });
     return Promise.resolve(res_find);
   } catch (err) {
     console.log(err);

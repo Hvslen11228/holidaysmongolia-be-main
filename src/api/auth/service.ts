@@ -1,4 +1,5 @@
 import user_model from "../../models/users";
+import author_model from "../../models/author";
 export const create_service = async (data: any) => {
   if (data.user_email == "" || data.user_email == null) {
     return Promise.reject("Мэдээлэл дутуу");
@@ -30,6 +31,20 @@ export const find_service = async (email: string) => {
   try {
     const res_find = await user_model.findOne({
       user_email: email,
+    });
+    if (res_find) {
+      return Promise.resolve(res_find);
+    } else {
+      return Promise.reject("Бүртгэлгүй");
+    }
+  } catch (err) {
+    return Promise.reject("Query error");
+  }
+};
+export const find_service_auhtor = async (email: string) => {
+  try {
+    const res_find = await author_model.findOne({
+      email: email,
     });
     if (res_find) {
       return Promise.resolve(res_find);

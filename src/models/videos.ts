@@ -3,6 +3,7 @@ import { Types } from "mongoose";
 
 const userSchema = new mongoose.Schema<any>(
   {
+    id: String,
     title: String,
     thumbnail: String,
   },

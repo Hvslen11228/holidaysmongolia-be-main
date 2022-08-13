@@ -1,5 +1,10 @@
 import { Request, Response } from "express";
-import { create_service, find_service, update_service } from "./service";
+import {
+  create_service,
+  find_service,
+  update_service,
+  find_service_auhtor,
+} from "./service";
 import jwt, { sign } from "jsonwebtoken";
 import sendMail from "../../functions/mail/nodemail";
 import * as bcrypt from "bcrypt";
@@ -55,6 +60,51 @@ export const login = async (req: Request, res: Response) => {
     });
   }
   const result = await bcrypt.compareSync(body.password, results.password);
+  if (result) {
+    results.password = undefined;
+    const jsontoken = sign({ result: results }, process.env.JWT_KEY, {
+      expiresIn: process.env.JWT_EXPIRESIN,
+    });
+    const cookieOptions = {
+      expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
+    };
+    return res.status(200).cookie("token", jsontoken, cookieOptions).json({
+      success: true,
+      message: "Нэвтэрлээ",
+      token: jsontoken,
+      data: results,
+    });
+  } else {
+    return res.status(200).json({
+      success: false,
+      message: "Нууц үг таарсангүй ",
+    });
+  }
+};
+export const login_author = async (req: Request, res: Response) => {
+  const body = req.body;
+  if (!body.email || body.email == null) {
+    return res.status(200).json({
+      success: false,
+      message: "Цахим хаяг хоосон",
+    });
+  }
+  if (!body.password || body.password == null) {
+    return res.status(200).json({
+      success: false,
+      message: "Нууц үг хоосон",
+    });
+  }
+  let results: any = null;
+  try {
+    results = await find_service_auhtor(body.email);
+  } catch (error) {
+    return res.status(200).json({
+      success: false,
+      message: error,
+    });
+  }
+  const result = body.password == results.password ? true : false;
   if (result) {
     results.password = undefined;
     const jsontoken = sign({ result: results }, process.env.JWT_KEY, {

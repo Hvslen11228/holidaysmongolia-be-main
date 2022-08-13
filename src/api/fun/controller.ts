@@ -11,7 +11,7 @@ export const menu = async (req: any, res: Response) => {
   const menu = [
     {
       id: "",
-      href: "/",
+      href: "",
       name: "Home",
       isNew: true,
     },
