@@ -22,6 +22,18 @@ const userSchema = new mongoose.Schema<any>(
     isAds: Boolean,
     map: Object,
     about: String,
+    amount_0: {
+      type: Number,
+      default: 0,
+    },
+    amount_1: {
+      type: Number,
+      default: 0,
+    },
+    amount_2: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );

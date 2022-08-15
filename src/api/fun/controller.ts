@@ -67,7 +67,7 @@ export const menu = async (req: any, res: Response) => {
 };
 export const location = async (req: any, res: Response) => {
   const category = await service_find({}, {});
-  let data: any = [];
+  const data: any = [];
   await category.forEach(async (el: any) => {
     await data.push(el.name);
   });

@@ -17,27 +17,31 @@ export const getall = async (req: any, res: Response) => {
     await results.forEach((el: any, index: any) => {
       el._doc.index = index + 1;
       el._doc.author = {
-        id: 3,
-        firstName: "Nathanil",
-        lastName: "Foulcher",
-        displayName: "Foulcher Nathanil",
-        email: "nfoulcher2@google.com.br",
-        gender: "Bigender",
-        avatar: "/static/media/Image-3.f257bc3c2ce5ae3a57db.png",
-        count: 43,
-        href: "/author",
-        desc: "There’s no stopping the tech giant. Apple now opens its 100th store in China.There’s no stopping the tech giant.",
-        jobName: "Author Job",
-        bgImage:
-          "https://images.pexels.com/photos/1001990/pexels-photo-1001990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        id: "62f9ef73cbe2f0e82ab78615",
+        _id: "62f9ef73cbe2f0e82ab78615",
+        firstName: "Admin",
+        lastName: "Admin",
+        displayName: "Admin",
+        email: "admin@admin.mn",
+        gender: "men",
+        avatar: "/uploads/holidays/image/png/62f9ef566818fb894eb44e61.png",
+        bgImage: "/uploads/holidays/image/jpeg/62f9bd396e9f2bfb9d27a30d.jpg",
+        count: 40,
+        href: "",
+        desc: "I am admin",
+        jobName: "Admin",
+        password: "1",
+        createdAt: "2022-08-15T07:02:11.674Z",
+        updatedAt: "2022-08-15T07:02:11.674Z",
+        __v: 0,
       };
       el._doc.categories = [
         {
           id: 3,
-          name: "Industrial",
+          name: "Blog and news",
           href: "/",
           thumbnail:
-            "https://images.pexels.com/photos/1858406/pexels-photo-1858406.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "/uploads/holidays/image/jpeg/62f9e08f111f997c84a54aef.jpg",
           count: 15,
           color: "yellow",
           taxonomy: "category",

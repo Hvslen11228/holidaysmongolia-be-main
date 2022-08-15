@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema<any>(
     featuredImage: String,
     title: String,
     desc: String,
+    body: String,
     date: String,
     href: String,
     commentCount: Number,
