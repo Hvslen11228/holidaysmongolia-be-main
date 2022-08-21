@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema<any>(
     taxonomy: String,
     count: Number,
     thumbnail: String,
+    lang: String,
   },
   { timestamps: true }
 );

@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema<any>(
     like: Object,
     categoriesId: Array,
     postType: String,
+    lang: String,
   },
   { timestamps: true }
 );
