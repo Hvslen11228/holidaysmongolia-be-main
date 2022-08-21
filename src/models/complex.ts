@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema<any>(
     },
     icons: Array,
     lang: String,
+    pre_payment: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );

@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema<any>(
     href: String,
     desc: String,
     jobName: String,
+    type: {
+      type: String,
+      default: "mod",
+    },
     password: String,
   },
   { timestamps: true }

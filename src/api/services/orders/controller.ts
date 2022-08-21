@@ -41,24 +41,7 @@ export const one = async (req: any, res: Response) => {
     });
   }
 };
-export const group = async (req: any, res: Response) => {
-  const { id } = req.params;
-  try {
-    const results = await service_find_one({
-      listingCategoryId: new Types.ObjectId(id),
-    });
-    return res.status(200).json({
-      success: true,
-      message: "Амжилттай",
-      data: results,
-    });
-  } catch (error) {
-    return res.status(200).json({
-      success: false,
-      message: error,
-    });
-  }
-};
+
 export const create = async (req: any, res: Response) => {
   const { _id } = req;
   const { body } = req;

@@ -13,14 +13,7 @@ const jsonParser = bodyParser.json();
 const app: Express = express();
 import date from "date-and-time";
 connectDB();
-const cors_urls = [
-  "http://localhost:3000",
-  "http://localhost:3001",
-  "https://app.seller.mn",
-  "http://app.seller.mn",
-  "https://admin.seller.mn",
-  "http://admin.seller.mn",
-];
+const cors_urls = [];
 app.use(
   cookieParser(),
   fileupload(),

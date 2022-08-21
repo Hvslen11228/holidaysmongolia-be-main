@@ -42,8 +42,10 @@ const where = [
       amount_0: 1,
       amount_1: 1,
       amount_2: 1,
+      icons: 1,
       author: { $arrayElemAt: ["$author", 0] },
       listingCategory: { $arrayElemAt: ["$listingCategory", 0] },
+      lang: 1,
     },
   },
 ];

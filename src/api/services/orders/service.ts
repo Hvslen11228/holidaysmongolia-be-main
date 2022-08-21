@@ -1,58 +1,42 @@
-import tour_model from "../../../models/tour";
+import tour_model from "../../../models/orders";
 import { Types } from "mongoose";
 const { ObjectId } = Types;
 const where = [
   {
     $lookup: {
-      from: "authors",
-      localField: "authorId",
+      from: "users",
+      localField: "user_id",
       foreignField: "_id",
-      as: "author",
+      as: "user",
     },
   },
   {
     $lookup: {
-      from: "categorys",
-      localField: "listingCategoryId",
+      from: "tours",
+      localField: "tour_id",
       foreignField: "_id",
-      as: "listingCategory",
+      as: "tour",
     },
   },
   {
     $project: {
-      authorId: 1,
+      user_id: 1,
+      amount: 1,
+      travelers: 1,
+      type: 1,
+      income_amount: 1,
+      tour_id: 1,
+      pay_type: 1,
       date: 1,
-      href: 1,
-      listingCategoryId: 1,
-      title: 1,
-      featuredImage: 1,
-      galleryImgs: 1,
-      commentCount: 1,
-      viewCount: 1,
-      like: 1,
-      address: 1,
-      reviewStart: 1,
-      reviewCount: 1,
-      price: 1,
-      maxGuests: 1,
-      saleOff: 1,
-      isAds: 1,
-      map: 1,
-      about: 1,
-      amount_0: 1,
-      amount_1: 1,
-      amount_2: 1,
-      author: { $arrayElemAt: ["$author", 0] },
-      listingCategory: { $arrayElemAt: ["$listingCategory", 0] },
+      user: { $arrayElemAt: ["$user", 0] },
+      tour: { $arrayElemAt: ["$tour", 0] },
     },
   },
 ];
-
 export const service_find = async (body: any, sort: any) => {
   try {
     const res_find = await tour_model.aggregate([...where]);
 
-    const res = await tour_model.find(body).sort(sort);
     return Promise.resolve(res_find);
   } catch (err) {
     console.log(err);
@@ -67,8 +51,6 @@ export const service_find_one = async (body: any) => {
       },
       ...where,
     ]);
-    const res = await tour_model.findOne(body);
-
     return Promise.resolve(res_find);
   } catch (err) {
     console.log(err);
