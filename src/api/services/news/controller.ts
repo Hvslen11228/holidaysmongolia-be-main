@@ -17,27 +17,31 @@ export const getall = async (req: any, res: Response) => {
     await results.forEach((el: any, index: any) => {
       el._doc.index = index + 1;
       el._doc.author = {
-        id: 3,
-        firstName: "Nathanil",
-        lastName: "Foulcher",
-        displayName: "Foulcher Nathanil",
-        email: "nfoulcher2@google.com.br",
-        gender: "Bigender",
-        avatar: "/static/media/Image-3.f257bc3c2ce5ae3a57db.png",
-        count: 43,
+        _id: "6301c41c518a99d43c578593",
+        firstName: "Admin",
+        lastName: "Admin",
+        displayName: "Admin",
+        email: "admin@admin.mn",
+        gender: "men",
+        avatar: "/uploads/holidays/image/png/6301c3be16519840a7da4d2f.png",
+        bgImage: "/uploads/holidays/image/jpeg/6301c3c7a025846fe4e8c114.jpg",
+        count: 40,
         href: "/author",
-        desc: "There’s no stopping the tech giant. Apple now opens its 100th store in China.There’s no stopping the tech giant.",
-        jobName: "Author Job",
-        bgImage:
-          "https://images.pexels.com/photos/1001990/pexels-photo-1001990.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        desc: "Site superAdmin",
+        jobName: "Admin",
+        type: "admin",
+        password: "1",
+        createdAt: "2022-08-21T05:35:24.518Z",
+        updatedAt: "2022-08-21T05:35:24.518Z",
+        __v: 0,
       };
       el._doc.categories = [
         {
           id: 3,
-          name: "Industrial",
+          name: "Blog and news",
           href: "/",
           thumbnail:
-            "https://images.pexels.com/photos/1858406/pexels-photo-1858406.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "/uploads/holidays/image/jpeg/630ae4d38dbce38de00b1450.jpg",
           count: 15,
           color: "yellow",
           taxonomy: "category",
@@ -60,7 +64,37 @@ export const getall = async (req: any, res: Response) => {
 export const one = async (req: any, res: Response) => {
   const { id } = req.params;
   try {
-    const results = await service_find_one({ _id: id });
+    const results: any = await service_find_one({ _id: id });
+    results._doc.author = {
+      _id: "6301c41c518a99d43c578593",
+      firstName: "Admin",
+      lastName: "Admin",
+      displayName: "Admin",
+      email: "admin@admin.mn",
+      gender: "men",
+      avatar: "/uploads/holidays/image/png/6301c3be16519840a7da4d2f.png",
+      bgImage: "/uploads/holidays/image/jpeg/6301c3c7a025846fe4e8c114.jpg",
+      count: 40,
+      href: "/author",
+      desc: "Site superAdmin",
+      jobName: "Admin",
+      type: "admin",
+      password: "1",
+      createdAt: "2022-08-21T05:35:24.518Z",
+      updatedAt: "2022-08-21T05:35:24.518Z",
+      __v: 0,
+    };
+    results._doc.categories = [
+      {
+        id: 3,
+        name: "Blog and news",
+        href: "/",
+        thumbnail: "/uploads/holidays/image/jpeg/630ae4d38dbce38de00b1450.jpg",
+        count: 15,
+        color: "yellow",
+        taxonomy: "category",
+      },
+    ];
     return res.status(200).json({
       success: true,
       message: "Амжилттай",

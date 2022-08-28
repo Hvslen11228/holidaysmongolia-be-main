@@ -43,6 +43,21 @@ export const service_find = async (body: any, sort: any) => {
     return Promise.reject("Query error");
   }
 };
+export const service_find_body = async (body: any, sort: any) => {
+  try {
+    const res_find = await tour_model.aggregate([
+      {
+        $match: body,
+      },
+      ...where,
+    ]);
+
+    return Promise.resolve(res_find);
+  } catch (err) {
+    console.log(err);
+    return Promise.reject("Query error");
+  }
+};
 export const service_find_one = async (body: any) => {
   try {
     const res_find = await tour_model.aggregate([

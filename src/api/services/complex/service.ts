@@ -46,6 +46,7 @@ const where = [
       icons: 1,
       author: { $arrayElemAt: ["$author", 0] },
       listingCategory: { $arrayElemAt: ["$listingCategory", 0] },
+      pre_payment: 1,
     },
   },
 ];
