@@ -13,7 +13,12 @@ import bodyParser from "body-parser";
 export const getall = async (req: any, res: Response) => {
   const { _id } = req;
   try {
-    const results = await service_find(_id, {});
+    const results = await service_find_body(
+      {
+        type: true,
+      },
+      {}
+    );
     return res.status(200).json({
       success: true,
       message: "Амжилттай",

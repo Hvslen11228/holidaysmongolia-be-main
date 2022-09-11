@@ -32,7 +32,12 @@ const where = [
 ];
 export const service_find_where = async (body: any, sort: any) => {
   try {
-    const res_find = await category_model.aggregate([...where]);
+    const res_find = await category_model.aggregate([
+      {
+        $match: body,
+      },
+      ...where,
+    ]);
     // const res = await category_model.find(body).sort(sort);
     return Promise.resolve(res_find);
   } catch (err) {

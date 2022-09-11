@@ -62,7 +62,12 @@ const where_ = [
 ];
 export const service_find_where = async (body: any, sort: any) => {
   try {
-    const res_find = await complex_model.aggregate([...where_]);
+    const res_find = await complex_model.aggregate([
+      {
+        $match: body,
+      },
+      ...where_,
+    ]);
 
     const res = await complex_model.find(body).sort(sort);
     return Promise.resolve(res_find);

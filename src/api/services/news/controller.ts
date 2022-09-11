@@ -11,8 +11,21 @@ import bodyParser from "body-parser";
 
 export const getall = async (req: any, res: Response) => {
   const { _id } = req;
+  let lang = req.get("Accept-Language");
+  let admin = false;
+  if (lang) {
+    if (lang != "en" && lang != "any") {
+      if (lang == "admin") {
+        admin = true;
+      } else {
+        lang = "en";
+      }
+    }
+  } else {
+    lang = "en";
+  }
   try {
-    const results: any = await service_find(_id, {});
+    const results: any = await service_find(admin ? {} : { lang: lang }, {});
     const data: any = [];
     await results.forEach((el: any, index: any) => {
       el._doc.index = index + 1;

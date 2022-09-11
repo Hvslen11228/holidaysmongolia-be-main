@@ -5,10 +5,17 @@ import {
 } from "../services/category/service";
 import { service_find_where as complex_service_find } from "../services/complex/service";
 export const menu = async (req: any, res: Response) => {
-  const category = await category_service_find({}, {});
-  const complex = await complex_service_find({}, {});
-
-  const menu = [
+  let lang = req.get("Accept-Language");
+  if (lang) {
+    if (lang != "en" && lang != "any") {
+      lang = "en";
+    }
+  }
+  const category = await category_service_find({ lang: "en" }, {});
+  const complex = await complex_service_find({ lang: "en" }, {});
+  const category2 = await category_service_find({ lang: "any" }, {});
+  const complex2 = await complex_service_find({ lang: "any" }, {});
+  const menu1 = [
     {
       id: "",
       href: "",
@@ -44,6 +51,57 @@ export const menu = async (req: any, res: Response) => {
         {
           id: 1,
           href: "/news",
+          name: "News",
+        },
+        {
+          id: 1,
+          href: "/blog",
+          name: "Blog",
+        },
+      ],
+    },
+    {
+      id: "",
+      href: "/about",
+      name: "About",
+    },
+  ];
+  const menu2 = [
+    {
+      id: "",
+      href: "",
+      name: "Нүүр",
+      isNew: true,
+    },
+    {
+      id: "",
+      href: "#",
+      name: "Аялал",
+      type: "megaMenu",
+      megaMenu: [...category2],
+    },
+    {
+      id: "",
+      href: "#",
+      name: "Цогцолбор",
+      type: "dropdown",
+      isNew: true,
+      children: [...complex2],
+    },
+    // {
+    //   id: "",
+    //   href: "/event",
+    //   name: "Event",
+    // },
+    {
+      id: "",
+      href: "#",
+      name: "Мэдээ, блог",
+      type: "dropdown",
+      children: [
+        {
+          id: 1,
+          href: "/news",
           name: "Мэдээ",
         },
         {
@@ -56,17 +114,23 @@ export const menu = async (req: any, res: Response) => {
     {
       id: "",
       href: "/about",
-      name: "About",
+      name: "Тухай",
     },
   ];
   return res.status(200).json({
     success: true,
     message: "Амжилттай",
-    data: { first_language: menu, second_language: menu },
+    data: { first_language: menu1, second_language: menu2 },
   });
 };
 export const location = async (req: any, res: Response) => {
-  const category = await service_find({}, {});
+  let lang = req.get("Accept-Language");
+  if (lang) {
+    if (lang != "en" && lang != "any") {
+      lang = "en";
+    }
+  }
+  const category = await service_find({ lang: lang }, {});
   const data: any = [];
   await category.forEach(async (el: any) => {
     await data.push(el.name);

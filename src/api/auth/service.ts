@@ -7,6 +7,8 @@ export const create_service = async (data: any) => {
   const inserts = {
     user_email: data.user_email.toLowerCase(),
     password: data.password,
+    first_name: data?.first_name,
+    last_name: data?.last_name,
     user_id: data.user_id,
   };
   try {

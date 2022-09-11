@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
 export interface usersDoc extends mongoose.Document {
+  first_name: string;
+  last_name: string;
   user_email: string;
   password: string;
   user_id: number;
@@ -8,6 +10,8 @@ export interface usersDoc extends mongoose.Document {
 
 const userSchema = new mongoose.Schema<usersDoc>(
   {
+    first_name: String,
+    last_name: String,
     user_email: {
       type: String,
       unique: true,
