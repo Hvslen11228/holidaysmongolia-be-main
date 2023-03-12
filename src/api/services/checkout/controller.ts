@@ -32,7 +32,7 @@ export const callback = async (req: Request, res: Response) => {
     } else {
       const Golomt = await GolomtPay.checking(invoice.invoice_transaction_id);
       console.log(Golomt);
-      let result = await service_update(
+      const result = await service_update(
         { _id: invoice._id },
         {
           pay: true,
@@ -113,7 +113,7 @@ export const checker = async (req: Request, res: Response) => {
       });
     } else {
       const Golomt = await GolomtPay.checking(invoice.invoice_transaction_id);
-      let result = await service_update(
+      const result = await service_update(
         { _id: invoice._id },
         {
           pay: true,
@@ -172,7 +172,7 @@ export const notification = async (req: Request, res: Response) => {
       });
     } else {
       const Golomt = await GolomtPay.checking(invoice.invoice_transaction_id);
-      let result = await service_update(
+      const result = await service_update(
         { _id: invoice._id },
         {
           pay: true,

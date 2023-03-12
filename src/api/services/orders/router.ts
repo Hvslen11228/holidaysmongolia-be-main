@@ -8,6 +8,7 @@ import {
   update,
   getall_my,
   createXanadu,
+  onexanadu,
 } from "./controller";
 import { checkToken, authorize } from "../../../auth/token_validation";
 router.get("/", checkToken, getall);
@@ -17,4 +18,5 @@ router.post("/", checkToken, create);
 router.delete("/:id", checkToken, remove);
 router.put("/:id", checkToken, update);
 router.post("/xanadu", checkToken, createXanadu);
+router.get("/:id/xanadu/order", checkToken, onexanadu);
 export default router;

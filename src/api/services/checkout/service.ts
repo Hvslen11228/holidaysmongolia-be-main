@@ -3,6 +3,8 @@ import tour_model from "../../../models/orders";
 import xanaduorders from "../../../models/xanaduorders";
 import { Types } from "mongoose";
 import axiosRequest from "../../../functions/axios";
+import sendMail from "../../../functions/mail/nodemail";
+import { service_find_one_xanadu } from "../orders/service";
 export const service_one = async (body: any) => {
   try {
     console.log(body);
@@ -58,6 +60,18 @@ export const service_xanadu_order_callback = async (id: any, data: any) => {
     await xanaduorders.updateOne(
       { _id: id },
       { $set: { type: true, pay_type: "paid" } }
+    );
+    const order = await service_find_one_xanadu({ _id: data.wallet_id });
+    await sendMail(
+      "validation",
+      "Систем",
+      "role",
+      order.user.user_email,
+      "Xanadu festival",
+      {
+        order: order,
+        data: data,
+      }
     );
     const queryRes = await golomtModel.findOne({ _id: id });
     return Promise.resolve(queryRes);

@@ -1,6 +1,7 @@
 import tour_model from "../../../models/orders";
 import xanaduorders from "../../../models/xanaduorders";
 import { Types } from "mongoose";
+
 const { ObjectId } = Types;
 const where = [
   {
@@ -31,6 +32,28 @@ const where = [
       date: 1,
       user: { $arrayElemAt: ["$user", 0] },
       tour: { $arrayElemAt: ["$tour", 0] },
+    },
+  },
+];
+const where_xanadu = [
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user",
+    },
+  },
+  {
+    $project: {
+      user_id: 1,
+      amount: 1,
+      accommodations: 1,
+      type: 1,
+      tour_id: 1,
+      pay_type: 1,
+      date: 1,
+      user: { $arrayElemAt: ["$user", 0] },
     },
   },
 ];
@@ -134,6 +157,20 @@ export const service_find_one = async (body: any) => {
     } else {
       return Promise.resolve(res_find);
     }
+  } catch (err) {
+    return Promise.reject("Query error");
+  }
+};
+export const service_find_one_xanadu = async (body: any) => {
+  try {
+    const res_find: any = await xanaduorders.aggregate([
+      {
+        $match: body,
+      },
+      ...where_xanadu,
+    ]);
+
+    return Promise.resolve(res_find);
   } catch (err) {
     return Promise.reject("Query error");
   }

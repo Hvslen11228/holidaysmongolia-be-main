@@ -7,6 +7,7 @@ import {
   service_remove,
   service_update,
   service_create_xanadu,
+  service_find_one_xanadu,
 } from "./service";
 import { Types } from "mongoose";
 import bodyParser from "body-parser";
@@ -134,6 +135,24 @@ export const createXanadu = async (req: any, res: Response) => {
       success: true,
       message: "Амжилттай",
       data: results,
+    });
+  } catch (error) {
+    return res.status(200).json({
+      success: false,
+      message: error,
+    });
+  }
+};
+export const onexanadu = async (req: any, res: Response) => {
+  const { id } = req.params;
+  try {
+    const results = await service_find_one_xanadu({
+      _id: new Types.ObjectId(id),
+    });
+    return res.status(200).json({
+      success: true,
+      message: "Амжилттай",
+      data: results[0],
     });
   } catch (error) {
     return res.status(200).json({

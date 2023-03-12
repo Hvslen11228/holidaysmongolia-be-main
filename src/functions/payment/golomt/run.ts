@@ -2,7 +2,7 @@ import { create_golomt_simple, golomt_checking } from "./service";
 import { Types } from "mongoose";
 import crypto from "crypto";
 const hmac256 = async (key: any, message: any) => {
-  let hash = crypto.createHmac("sha256", key).update(message);
+  const hash = crypto.createHmac("sha256", key).update(message);
   return hash.digest("hex");
 };
 export const create = async (body: any) => {
