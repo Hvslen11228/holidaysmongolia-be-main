@@ -65,6 +65,11 @@ export const menu = async (req: any, res: Response) => {
       href: "/about",
       name: "About",
     },
+    {
+      id: "",
+      href: "/xanadu",
+      name: "Xanadu",
+    },
   ];
   const menu2 = [
     {
@@ -115,6 +120,11 @@ export const menu = async (req: any, res: Response) => {
       id: "",
       href: "/about",
       name: "Тухай",
+    },
+    {
+      id: "",
+      href: "/xanadu",
+      name: "Xanadu",
     },
   ];
   return res.status(200).json({

@@ -5,9 +5,8 @@ const userSchema = new mongoose.Schema<any>(
   {
     user_id: Types.ObjectId,
     amount: Number,
-    travelers: Array,
+    accommodations: Array,
     type: Boolean,
-    income_amount: Number,
     tour_id: Types.ObjectId,
     date: String,
     pay_type: {
@@ -18,5 +17,5 @@ const userSchema = new mongoose.Schema<any>(
   { timestamps: true }
 );
 
-const users = mongoose.model<any>("orders", userSchema);
+const users = mongoose.model<any>("xanaduorders", userSchema);
 export default users;

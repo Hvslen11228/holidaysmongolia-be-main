@@ -6,6 +6,7 @@ import {
   service_create,
   service_remove,
   service_update,
+  service_create_xanadu,
 } from "./service";
 import { Types } from "mongoose";
 import bodyParser from "body-parser";
@@ -112,6 +113,23 @@ export const update = async (req: any, res: Response) => {
   const { id } = req.params;
   try {
     const results = await service_update(id, { ...body });
+    return res.status(200).json({
+      success: true,
+      message: "Амжилттай",
+      data: results,
+    });
+  } catch (error) {
+    return res.status(200).json({
+      success: false,
+      message: error,
+    });
+  }
+};
+export const createXanadu = async (req: any, res: Response) => {
+  const { _id } = req;
+  const { body } = req;
+  try {
+    const results = await service_create_xanadu(body);
     return res.status(200).json({
       success: true,
       message: "Амжилттай",

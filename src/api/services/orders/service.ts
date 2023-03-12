@@ -1,4 +1,5 @@
 import tour_model from "../../../models/orders";
+import xanaduorders from "../../../models/xanaduorders";
 import { Types } from "mongoose";
 const { ObjectId } = Types;
 const where = [
@@ -159,6 +160,15 @@ export const service_remove = async (id: any) => {
   try {
     const res_find = await tour_model.findOneAndDelete({ _id: id });
     return Promise.resolve(res_find);
+  } catch (err) {
+    console.log(err);
+    return Promise.reject("Query error");
+  }
+};
+export const service_create_xanadu = async (body: any) => {
+  try {
+    const res = await xanaduorders.create(body);
+    return Promise.resolve(res);
   } catch (err) {
     console.log(err);
     return Promise.reject("Query error");
