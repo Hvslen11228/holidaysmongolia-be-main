@@ -57,23 +57,25 @@ export const service_order_callback = async (id: any, data: any) => {
 };
 export const service_xanadu_order_callback = async (id: any, data: any) => {
   try {
+    console.log(id);
     await xanaduorders.updateOne(
       { _id: id },
       { $set: { type: true, pay_type: "paid" } }
     );
     const order = await service_find_one_xanadu({ _id: data.wallet_id });
     await sendMail(
-      "validation",
+      "notf",
       "Систем",
       "role",
-      order.user.user_email,
+      order[0].user.user_email,
       "Xanadu festival",
       {
-        order: order,
+        order: order[0],
         data: data,
       }
     );
-    const queryRes = await golomtModel.findOne({ _id: id });
+    console.log("object");
+    const queryRes = await xanaduorders.findOne({ _id: id });
     return Promise.resolve(queryRes);
   } catch (err) {
     return Promise.reject("Query error");

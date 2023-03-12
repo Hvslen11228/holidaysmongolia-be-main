@@ -106,7 +106,7 @@ export const checker = async (req: Request, res: Response) => {
     const invoice = await service_one({
       _id: id,
     });
-    if (invoice.pay) {
+    if (!invoice.pay) {
       return res.status(200).json({
         success: true,
         message: "Аль хэдийн төлөгдсөн ",
