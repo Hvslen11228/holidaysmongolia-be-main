@@ -39,7 +39,7 @@ export default async (
   } else {
     await transporter.sendMail({
       from: `${process.env.Mail_from}`,
-      to: `${Address}`,
+      to: `${to_name} <${Address}>`,
       subject: subject,
       html: html,
     });

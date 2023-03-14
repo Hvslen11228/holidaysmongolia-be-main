@@ -66,18 +66,36 @@ export const service_xanadu_order_callback = async (id: any, data: any) => {
     await sendMail(
       "notf",
       "Систем",
-      "role",
-      order[0].user.user_email,
       "Xanadu festival",
-      {
-        order: order[0],
-        data: data,
-      }
+      order[0].user.user_email,
+      "You’re booked! Pack your bags – see you on [Jun 10 2023]",
+      `
+      <pHi  ${order[0].user.first_name},></pHi>
+      <p>It’s confirmed, we’ll see you on [Jun 10 2023]! Thank you for booking Xanadu festival with us on Ulaanbaatar, Mongolia. You’ll find details of your reservation and payment details enclosed below.
+      <br>
+      If you need to get in touch, you can email or phone us directly. We look forward to welcoming you soon!
+      </p>
+      <p>inbound@genco-tour.mn, phone number +97690711900 </p>
+     `
     );
-    console.log("object");
     const queryRes = await xanaduorders.findOne({ _id: id });
     return Promise.resolve(queryRes);
   } catch (err) {
     return Promise.reject("Query error");
+  }
+};
+export const monxansh = async () => {
+  try {
+    const result = await axiosRequest("monxansh", false, {
+      method: "GET",
+      url: encodeURI("https://monxansh.appspot.com/xansh.json?currency=USD"),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    return Promise.resolve(result[0].rate_float);
+  } catch (error) {
+    return Promise.reject(error);
   }
 };

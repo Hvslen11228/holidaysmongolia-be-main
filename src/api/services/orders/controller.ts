@@ -8,6 +8,7 @@ import {
   service_update,
   service_create_xanadu,
   service_find_one_xanadu,
+  service_find_body_xanadu,
 } from "./service";
 import { Types } from "mongoose";
 import bodyParser from "body-parser";
@@ -16,6 +17,27 @@ export const getall = async (req: any, res: Response) => {
   const { _id } = req;
   try {
     const results = await service_find_body(
+      {
+        type: true,
+      },
+      {}
+    );
+    return res.status(200).json({
+      success: true,
+      message: "Амжилттай",
+      data: results,
+    });
+  } catch (error) {
+    return res.status(200).json({
+      success: false,
+      message: error,
+    });
+  }
+};
+export const getall_xanadu = async (req: any, res: Response) => {
+  const { _id } = req;
+  try {
+    const results = await service_find_body_xanadu(
       {
         type: true,
       },

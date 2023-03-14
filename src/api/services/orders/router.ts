@@ -9,8 +9,10 @@ import {
   getall_my,
   createXanadu,
   onexanadu,
+  getall_xanadu,
 } from "./controller";
 import { checkToken, authorize } from "../../../auth/token_validation";
+router.get("/xanadu/alldata", checkToken, getall_xanadu);
 router.get("/", checkToken, getall);
 router.get("/find/my", checkToken, getall_my);
 router.get("/:id", checkToken, one);

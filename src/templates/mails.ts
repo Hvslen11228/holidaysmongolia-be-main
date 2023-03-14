@@ -6,7 +6,7 @@ class html {
     return `${JSON.stringify(data.code)}`;
   }
   notf(data: any) {
-    return `${JSON.stringify(data)}`;
+    return data;
   }
 }
 export default new html();

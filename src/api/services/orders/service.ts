@@ -57,6 +57,16 @@ const where_xanadu = [
     },
   },
 ];
+const where_xanadu2 = [
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user",
+    },
+  },
+];
 const where_complex = [
   {
     $lookup: {
@@ -133,6 +143,21 @@ export const service_find_body = async (body: any, sort: any) => {
         res_find[index] = res_find2[0];
       }
     }
+    return Promise.resolve(res_find);
+  } catch (err) {
+    return Promise.reject("Query error");
+  }
+};
+
+export const service_find_body_xanadu = async (body: any, sort: any) => {
+  try {
+    const res_find: any = await xanaduorders.aggregate([
+      {
+        $match: body,
+      },
+      ...where_xanadu2,
+    ]);
+
     return Promise.resolve(res_find);
   } catch (err) {
     return Promise.reject("Query error");

@@ -5,6 +5,7 @@ import {
   service_update,
   service_order_callback,
   service_xanadu_order_callback,
+  monxansh,
 } from "./service";
 import { GolomtPay } from "./../../../functions/payment/index";
 import { Types } from "mongoose";
@@ -59,7 +60,8 @@ export const callback = async (req: Request, res: Response) => {
 };
 export const create = async (req: any, res: Response) => {
   const { order_id, amount, description, callback, order_type } = req.body;
-  const newamount = parseFloat(amount);
+  const monamount = await monxansh();
+  const newamount = parseFloat(amount) * monamount;
   try {
     const insert = {
       _id: new Types.ObjectId(),
