@@ -61,7 +61,7 @@ export const callback = async (req: Request, res: Response) => {
 export const create = async (req: any, res: Response) => {
   const { order_id, amount, description, callback, order_type } = req.body;
   const monamount = await monxansh();
-  const newamount = parseFloat(amount) * monamount;
+  const newamount = parseFloat(amount) * Math.round(monamount);
   try {
     const insert = {
       _id: new Types.ObjectId(),
