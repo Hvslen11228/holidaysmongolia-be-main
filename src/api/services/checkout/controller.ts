@@ -61,7 +61,7 @@ export const callback = async (req: Request, res: Response) => {
 export const create = async (req: any, res: Response) => {
   const { order_id, amount, description, callback, order_type } = req.body;
   const monamount = await monxansh();
-  const newamount = parseFloat(amount) * monamount;
+  const newamount = parseFloat(amount);
   try {
     const insert = {
       _id: new Types.ObjectId(),
@@ -74,6 +74,7 @@ export const create = async (req: any, res: Response) => {
       callback: callback || null,
       pay: false,
     };
+    console.log(insert);
     const results = await GolomtPay.create({
       id: insert._id,
       amount: insert.amount,
