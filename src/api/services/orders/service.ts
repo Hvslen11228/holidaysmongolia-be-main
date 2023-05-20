@@ -47,6 +47,8 @@ const where_xanadu = [
   {
     $project: {
       user_id: 1,
+      user_email: 1,
+      user_name: 1,
       amount: 1,
       accommodations: 1,
       type: 1,

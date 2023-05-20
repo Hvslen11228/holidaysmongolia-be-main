@@ -4,6 +4,8 @@ import { Types } from "mongoose";
 const userSchema = new mongoose.Schema<any>(
   {
     user_id: Types.ObjectId,
+    user_email: String,
+    user_name: String,
     amount: Number,
     accommodations: Array,
     type: Boolean,
