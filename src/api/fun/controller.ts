@@ -24,7 +24,7 @@ export const menu = async (req: any, res: Response) => {
     },
     {
       id: "",
-      href: "#",
+      href: "/listing",
       name: "Tours",
       type: "megaMenu",
       megaMenu: [...category],
@@ -80,10 +80,10 @@ export const menu = async (req: any, res: Response) => {
     },
     {
       id: "",
-      href: "#",
+      href: "/listing",
       name: "Аялал",
-      type: "megaMenu",
-      megaMenu: [...category2],
+      //type: "megaMenu",
+      //megaMenu: [...category2],
     },
     {
       id: "",
