@@ -31,11 +31,8 @@ export const menu = async (req: any, res: Response) => {
     },
     {
       id: "",
-      href: "#",
-      name: "Complex",
-      type: "dropdown",
-      isNew: true,
-      children: [...complex],
+      href: "/hotels",
+      name: "Hotels",
     },
     // {
     //   id: "",
@@ -87,11 +84,8 @@ export const menu = async (req: any, res: Response) => {
     },
     {
       id: "",
-      href: "#",
-      name: "Цогцолбор",
-      type: "dropdown",
-      isNew: true,
-      children: [...complex2],
+      href: "/hotels",
+      name: "Зочид буудлууд",
     },
     // {
     //   id: "",
